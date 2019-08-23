@@ -19,7 +19,7 @@ public class Player1MovementScript : MonoBehaviour
 
     void calculateMovementAndDirection()
     {        
-        if(Input.GetKeyDown("right shift"))
+        if(Input.GetKeyDown("left shift") && !sprinting)
         {
             sprinting = true;
             lifeGO.currentHP -= 1;

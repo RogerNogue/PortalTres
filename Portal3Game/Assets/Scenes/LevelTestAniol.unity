@@ -447,6 +447,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 328465f7ea897a740a23e59e035a7c5b, type: 3}
+--- !u!114 &853361905 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 853361905, guid: f074de742b8a2684ca264a5c48889eed,
+    type: 3}
+  m_PrefabInstance: {fileID: 929980048}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1346bca346508984a9359858bcfafc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &929980048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -889,6 +901,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 7.3480377
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636938750582568872, guid: 032ceaa8dd36f34429f0f86e0842b31e,
+        type: 3}
+      propertyPath: lifeGO
+      value: 
+      objectReference: {fileID: 853361905}
+    - target: {fileID: 4636938750582568872, guid: 032ceaa8dd36f34429f0f86e0842b31e,
+        type: 3}
+      propertyPath: sprintSpeedBonus
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636938750582568872, guid: 032ceaa8dd36f34429f0f86e0842b31e,
+        type: 3}
+      propertyPath: sprintDuration
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 032ceaa8dd36f34429f0f86e0842b31e, type: 3}
