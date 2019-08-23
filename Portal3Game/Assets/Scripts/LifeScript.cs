@@ -8,8 +8,6 @@ public class LifeScript : MonoBehaviour
     public GameObject secondHeart;
     public GameObject thirdHeart;
 
-    public GameObject Player;
-
     private BoxCollider2D playerCollider;
     private SpriteRenderer playerSprite;
 
@@ -22,8 +20,8 @@ public class LifeScript : MonoBehaviour
     void Start()
     {
         currentHP = maxHP;
-        playerCollider = Player.GetComponentInChildren<BoxCollider2D>();
-        playerSprite = Player.GetComponentInChildren<SpriteRenderer>();
+        playerCollider = GetComponentInChildren<BoxCollider2D>();
+        playerSprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame

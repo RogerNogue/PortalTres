@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4636938750582568873}
   - component: {fileID: 4636938750582568874}
   - component: {fileID: 4636938750582568872}
+  - component: {fileID: 1496386781}
   m_Layer: 0
   m_Name: Homeless_2
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &4636938750582568872
 MonoBehaviour:
@@ -68,6 +69,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
+  sprintSpeedBonus: 5
+  sprintDuration: 5
+--- !u!114 &1496386781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4636938750582568875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1346bca346508984a9359858bcfafc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstHeart: {fileID: 0}
+  secondHeart: {fileID: 0}
+  thirdHeart: {fileID: 0}
+  maxHP: 3
+  currentHP: 3
 --- !u!1 &4636938750929806427
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +171,7 @@ Transform:
   m_GameObject: {fileID: 4636938751049258202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 9, z: 1}
+  m_LocalScale: {x: 7.273843, y: 7.3480377, z: 1}
   m_Children: []
   m_Father: {fileID: 4636938750582568873}
   m_RootOrder: 0

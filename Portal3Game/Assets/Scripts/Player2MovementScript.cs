@@ -8,8 +8,8 @@ public class Player2MovementScript : MonoBehaviour
     public float playerSpeed;
     public float sprintSpeedBonus;
     public float sprintDuration;
-    public LifeScript lifeGO;
 
+    private LifeScript lifeGO;
     private Vector3 orientationPosition;
     private bool moving;
     private float sprintTimer = 0.0f;
@@ -78,6 +78,7 @@ public class Player2MovementScript : MonoBehaviour
     void Start()
     {
         orientationPosition = transform.position;
+        lifeGO = GetComponent<LifeScript>();
     }
 
     // Update is called once per frame

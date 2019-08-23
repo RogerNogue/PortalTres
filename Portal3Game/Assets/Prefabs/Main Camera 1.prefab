@@ -169,7 +169,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 853361904}
-  - component: {fileID: 853361905}
   m_Layer: 0
   m_Name: LifeHeartsP2
   m_TagString: Untagged
@@ -194,24 +193,6 @@ Transform:
   m_Father: {fileID: 3062985218032491722}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &853361905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853361903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1346bca346508984a9359858bcfafc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstHeart: {fileID: 2097408133}
-  secondHeart: {fileID: 2076428553}
-  thirdHeart: {fileID: 228702107}
-  Player: {fileID: 0}
-  maxHP: 3
-  currentHP: 3
 --- !u!1 &1290601292
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +202,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1290601293}
-  - component: {fileID: 1290601294}
   m_Layer: 0
   m_Name: LifeHeartsP1
   m_TagString: Untagged
@@ -246,24 +226,6 @@ Transform:
   m_Father: {fileID: 3062985218032491722}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1290601294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290601292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1346bca346508984a9359858bcfafc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstHeart: {fileID: 42391851}
-  secondHeart: {fileID: 1763416857}
-  thirdHeart: {fileID: 2095259452}
-  Player: {fileID: 0}
-  maxHP: 3
-  currentHP: 3
 --- !u!1 &1763416857
 GameObject:
   m_ObjectHideFlags: 0

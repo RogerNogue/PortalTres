@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 1512288113478708002}
   - component: {fileID: 1512288113478708001}
   - component: {fileID: 1512288113478708003}
+  - component: {fileID: 1715420202}
   m_Layer: 0
   m_Name: Homeless_1
   m_TagString: Untagged
@@ -110,7 +111,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &1512288113478708003
 MonoBehaviour:
@@ -125,6 +126,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
+  sprintSpeedBonus: 5
+  sprintDuration: 5
+--- !u!114 &1715420202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512288113478708000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1346bca346508984a9359858bcfafc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstHeart: {fileID: 0}
+  secondHeart: {fileID: 0}
+  thirdHeart: {fileID: 0}
+  maxHP: 3
+  currentHP: 3
 --- !u!1 &1512288113723535316
 GameObject:
   m_ObjectHideFlags: 0
