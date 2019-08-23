@@ -10,8 +10,11 @@ public class LifeScript : MonoBehaviour
 
     public GameObject Player;
 
-    public int maxHP;
+    private BoxCollider2D playerCollider;
+    private SpriteRenderer playerSprite;
 
+    public int maxHP;
+    private int lastHP;
     public int currentHP;
 
 
@@ -19,6 +22,8 @@ public class LifeScript : MonoBehaviour
     void Start()
     {
         currentHP = maxHP;
+        playerCollider = Player.GetComponentInChildren<BoxCollider2D>();
+        playerSprite = Player.GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -33,18 +38,37 @@ public class LifeScript : MonoBehaviour
             //dead idk
         }
 
-        switch(currentHP)
+        if (lastHP != currentHP) // this will only trigger when gaining health or taking damage. Very useful to have for the death event
         {
-            case 0:
-                firstHeart.SetActive(false);
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
+            switch (currentHP)
+            {
+                case 0:
+                    firstHeart.SetActive(false);
+                    secondHeart.SetActive(false);
+                    thirdHeart.SetActive(false);
 
+                    playerSprite.color = Color.green;
+                    playerSprite.sortingOrder = -1; //So it paints below the other guy alive
+                    playerCollider.enabled = false;
+                    break;
+                case 1:
+                    firstHeart.SetActive(true);
+                    secondHeart.SetActive(false);
+                    thirdHeart.SetActive(false);
+                    break;
+                case 2:
+                    firstHeart.SetActive(true);
+                    secondHeart.SetActive(true);
+                    thirdHeart.SetActive(false);
+                    break;
+                case 3:
+                    firstHeart.SetActive(true);
+                    secondHeart.SetActive(true);
+                    thirdHeart.SetActive(true);
+                    break;
+            }
         }
+
+        lastHP = currentHP;
     }
 }
