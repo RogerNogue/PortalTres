@@ -437,26 +437,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1512288113478708001, guid: 328465f7ea897a740a23e59e035a7c5b,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1512288113478708003, guid: 328465f7ea897a740a23e59e035a7c5b,
-        type: 3}
-      propertyPath: lifeGO
+    - target: {fileID: 1715420202, guid: 328465f7ea897a740a23e59e035a7c5b, type: 3}
+      propertyPath: firstHeart
       value: 
-      objectReference: {fileID: 1715420202}
-    - target: {fileID: 1512288113478708003, guid: 328465f7ea897a740a23e59e035a7c5b,
-        type: 3}
-      propertyPath: sprintSpeedBonus
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1512288113478708003, guid: 328465f7ea897a740a23e59e035a7c5b,
-        type: 3}
-      propertyPath: sprintDuration
-      value: 5
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 42391851}
+    - target: {fileID: 1715420202, guid: 328465f7ea897a740a23e59e035a7c5b, type: 3}
+      propertyPath: secondHeart
+      value: 
+      objectReference: {fileID: 1763416857}
+    - target: {fileID: 1715420202, guid: 328465f7ea897a740a23e59e035a7c5b, type: 3}
+      propertyPath: thirdHeart
+      value: 
+      objectReference: {fileID: 2095259452}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 328465f7ea897a740a23e59e035a7c5b, type: 3}
 --- !u!1001 &929980048
@@ -526,17 +518,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1290601294, guid: f074de742b8a2684ca264a5c48889eed, type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 1715420201}
-    - target: {fileID: 853361905, guid: f074de742b8a2684ca264a5c48889eed, type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 1496386780}
-    m_RemovedComponents:
-    - {fileID: 853361905, guid: f074de742b8a2684ca264a5c48889eed, type: 3}
-    - {fileID: 1290601294, guid: f074de742b8a2684ca264a5c48889eed, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f074de742b8a2684ca264a5c48889eed, type: 3}
 --- !u!1 &936872597
 GameObject:
@@ -877,62 +859,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4636938750582568874, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636938751049258201, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7.273843
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636938751049258201, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 7.3480377
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636938750582568872, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: lifeGO
+    - target: {fileID: 1496386781, guid: 032ceaa8dd36f34429f0f86e0842b31e, type: 3}
+      propertyPath: firstHeart
       value: 
-      objectReference: {fileID: 1496386781}
-    - target: {fileID: 4636938750582568872, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: sprintSpeedBonus
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636938750582568872, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: sprintDuration
-      value: 5
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2097408133}
+    - target: {fileID: 1496386781, guid: 032ceaa8dd36f34429f0f86e0842b31e, type: 3}
+      propertyPath: secondHeart
+      value: 
+      objectReference: {fileID: 2076428553}
+    - target: {fileID: 1496386781, guid: 032ceaa8dd36f34429f0f86e0842b31e, type: 3}
+      propertyPath: thirdHeart
+      value: 
+      objectReference: {fileID: 228702107}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 032ceaa8dd36f34429f0f86e0842b31e, type: 3}
---- !u!1 &1496386780 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4636938750582568875, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1496386779}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1496386781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496386780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1346bca346508984a9359858bcfafc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstHeart: {fileID: 2097408133}
-  secondHeart: {fileID: 2076428553}
-  thirdHeart: {fileID: 228702107}
-  Player: {fileID: 1496386780}
-  maxHP: 3
-  currentHP: 3
 --- !u!1 &1503499140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,30 +1065,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1715420201 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1512288113478708000, guid: 328465f7ea897a740a23e59e035a7c5b,
-    type: 3}
-  m_PrefabInstance: {fileID: 711515338}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1715420202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715420201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1346bca346508984a9359858bcfafc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstHeart: {fileID: 42391851}
-  secondHeart: {fileID: 1763416857}
-  thirdHeart: {fileID: 2095259452}
-  Player: {fileID: 1715420201}
-  maxHP: 3
-  currentHP: 3
 --- !u!1 &1763416857 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1763416857, guid: f074de742b8a2684ca264a5c48889eed,
