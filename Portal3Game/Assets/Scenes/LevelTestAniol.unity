@@ -430,6 +430,21 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1512288113478708003, guid: 328465f7ea897a740a23e59e035a7c5b,
+        type: 3}
+      propertyPath: lifeGO
+      value: 
+      objectReference: {fileID: 1290601294}
+    - target: {fileID: 1512288113478708003, guid: 328465f7ea897a740a23e59e035a7c5b,
+        type: 3}
+      propertyPath: sprintSpeedBonus
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512288113478708003, guid: 328465f7ea897a740a23e59e035a7c5b,
+        type: 3}
+      propertyPath: sprintDuration
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 328465f7ea897a740a23e59e035a7c5b, type: 3}
 --- !u!1001 &929980048
@@ -781,6 +796,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1290601294 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1290601294, guid: f074de742b8a2684ca264a5c48889eed,
+    type: 3}
+  m_PrefabInstance: {fileID: 929980048}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1346bca346508984a9359858bcfafc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1496386779
 PrefabInstance:
   m_ObjectHideFlags: 0

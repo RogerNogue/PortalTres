@@ -5,34 +5,60 @@ using UnityEngine;
 public class Player1MovementScript : MonoBehaviour
 {
     public float playerSpeed;
-
+    public float sprintSpeedBonus;
+    public float sprintDuration;
+    public LifeScript lifeGO;
+    
+  
     private Vector3 orientationPosition;
     private bool moving;
+    private float sprintTimer = 0.0f;
+    private bool sprinting = false;
+    private float totalSpeed;
+
 
     void calculateMovementAndDirection()
     {        
+        if(Input.GetKeyDown("right shift"))
+        {
+            sprinting = true;
+            lifeGO.currentHP -= 1;
+        }
+         
+        if(sprinting && sprintTimer < sprintDuration)
+        {
+            totalSpeed = playerSpeed + sprintSpeedBonus;
+            sprintTimer += Time.deltaTime;
+        }
+        else
+        {
+            totalSpeed = playerSpeed;
+            sprintTimer = 0.0f;
+            sprinting = false;
+        }
+
         //going through input detection modifying the position of the player
         if (Input.GetKey("w"))
         {
-            transform.position += new Vector3(0.0f, playerSpeed * Time.deltaTime, 0.0f);
+            transform.position += new Vector3(0.0f, totalSpeed * Time.deltaTime, 0.0f);
             orientationPosition.y += 1;
             moving = true;
         }
         if (Input.GetKey("a"))
         {
-            transform.position += new Vector3(-playerSpeed * Time.deltaTime, 0.0f, 0.0f);
+            transform.position += new Vector3(-totalSpeed * Time.deltaTime, 0.0f, 0.0f);
             orientationPosition.x -= 1;
             moving = true;
         }
         if (Input.GetKey("s"))
         {
-            transform.position += new Vector3(0, -playerSpeed * Time.deltaTime, 0.0f);
+            transform.position += new Vector3(0, -totalSpeed * Time.deltaTime, 0.0f);
             orientationPosition.y -= 1;
             moving = true;
         }
         if (Input.GetKey("d"))
         {
-            transform.position += new Vector3(playerSpeed * Time.deltaTime, 0.0f, 0.0f);
+            transform.position += new Vector3(totalSpeed * Time.deltaTime, 0.0f, 0.0f);
             orientationPosition.x += 1;
             moving = true;
         }
@@ -58,7 +84,9 @@ public class Player1MovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        calculateMovementAndDirection();
-
+        if (lifeGO.currentHP > 0)
+        {
+            calculateMovementAndDirection();
+        }
     }
 }
