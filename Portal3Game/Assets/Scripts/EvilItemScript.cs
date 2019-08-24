@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EvilItemScript : MonoBehaviour
 {
-    bool isInvulnerable(GameObject collided)
+    protected bool isInvulnerable(GameObject collided)
     {
         //if player 1 we use the Player1MovementScript
         if(collided.tag == "Player1")
@@ -19,7 +19,7 @@ public class EvilItemScript : MonoBehaviour
         }
         return false;
     }
-    void sendDamageSignal(GameObject collided)
+    protected void sendDamageSignal(GameObject collided)
     {
         if (collided.tag == "Player1")
         {
@@ -31,7 +31,9 @@ public class EvilItemScript : MonoBehaviour
             collided.GetComponent<Player2MovementScript>().gotDamaged();
         }
     }
-    void OnTriggerEnter2D(Collider2D col)
+
+    //since its parent, no ontriggerEnter2D function
+   /* virtual void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log(col.transform.parent.gameObject.name);
         //if player is invulnerable, we ignore the collision
@@ -42,5 +44,5 @@ public class EvilItemScript : MonoBehaviour
         sendDamageSignal(col.transform.parent.gameObject);
         LifeScript lifeGO = col.transform.parent.gameObject.GetComponent<LifeScript>();
         lifeGO.currentHP -= 1;
-    }
+    }*/
 }
