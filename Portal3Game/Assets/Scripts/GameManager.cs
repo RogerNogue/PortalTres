@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
             P2win.SetActive(true);
             GameStop();
         }
-
+           
         if(GameFinished)
         {
             gameFinishTimer += Time.deltaTime;
