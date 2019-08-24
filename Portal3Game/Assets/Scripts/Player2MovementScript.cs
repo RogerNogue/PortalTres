@@ -97,6 +97,7 @@ public class Player2MovementScript : MonoBehaviour
         orientationPosition = transform.position;
         lifeGO = GetComponent<LifeScript>();
         playerTrail = GetComponentInChildren<TrailRenderer>().gameObject;
+        transform.GetComponent<Rigidbody2D>().freezeRotation = true;
     }
 
     //Player got hit

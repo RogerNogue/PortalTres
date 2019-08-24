@@ -111,6 +111,7 @@ public class Player1MovementScript : MonoBehaviour
         orientationPosition = transform.position;
         playerTrail = GetComponentInChildren<TrailRenderer>().gameObject;
         lifeGO = GetComponent<LifeScript>();
+        transform.GetComponent<Rigidbody2D>().freezeRotation = true;
     }
 
     // Update is called once per frame
