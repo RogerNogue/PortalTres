@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public bool cameraScrolling = false;
+    public bool cameraScrolling = true;
 
     public GameObject mainCamera;
 
