@@ -8,6 +8,8 @@ public class Player2MovementScript : MonoBehaviour
     public float playerSpeed;
     public float sprintSpeedBonus;
     public float sprintDuration;
+    public float invulnerabilityDurationOnHit;
+    public float blinkSwitchTimer;
 
     private GameObject playerTrail;
     private LifeScript lifeGO;
@@ -16,6 +18,9 @@ public class Player2MovementScript : MonoBehaviour
     private float sprintTimer = 0.0f;
     private bool sprinting = false;
     private float totalSpeed;
+    private bool invulnerable;//can be consulted via function
+    private float hitTime;
+    private float lastBlinkTime;
 
     void calculateMovementAndDirection()
     {
@@ -76,6 +81,15 @@ public class Player2MovementScript : MonoBehaviour
         }
 
     }
+    public bool isInvulnerable()
+    {
+        return invulnerable;
+    }
+
+    void blink()
+    {
+        transform.GetComponentInChildren<SpriteRenderer>().enabled = !transform.GetComponentInChildren<SpriteRenderer>().enabled;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -85,12 +99,47 @@ public class Player2MovementScript : MonoBehaviour
         playerTrail = GetComponentInChildren<TrailRenderer>().gameObject;
     }
 
+    //Player got hit
+    public void gotDamaged()
+    {
+        //make invulnerable
+        invulnerable = true;
+        //store the hit time
+        hitTime = 0.0F;
+        //make disappear to start making it blink
+        transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        //store blink timer
+        lastBlinkTime = hitTime;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (lifeGO.currentHP > 0)
         {
             calculateMovementAndDirection();
+        }
+        //if got hit and is invulnerable, we make the necessary calculations
+        if (invulnerable)
+        {
+            hitTime += Time.deltaTime;
+            //check invulnerable timer and make sprite blink if is invulnerable
+            if (hitTime < invulnerabilityDurationOnHit)
+            {
+                lastBlinkTime += Time.deltaTime;
+                if (lastBlinkTime > blinkSwitchTimer)
+                {
+                    lastBlinkTime = 0.0F;
+                    blink();
+                }
+            }
+            //ensure sprite is active if not blinking
+            else
+            {
+                invulnerable = false;
+                transform.GetComponentInChildren<SpriteRenderer>().enabled = true;
+            }
+
         }
     }
 }
