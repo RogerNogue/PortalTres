@@ -8,6 +8,8 @@ public class Player1MovementScript : MonoBehaviour
     public float sprintSpeedBonus;
     public float sprintDuration;
 
+
+    private GameObject playerTrail;
     private LifeScript lifeGO;
     private Vector3 orientationPosition;
     private bool moving;
@@ -21,6 +23,7 @@ public class Player1MovementScript : MonoBehaviour
         if(Input.GetKeyDown("left shift") && !sprinting)
         {
             sprinting = true;
+            playerTrail.SetActive(true);
             lifeGO.currentHP -= 1;
         }
          
@@ -32,6 +35,7 @@ public class Player1MovementScript : MonoBehaviour
         else
         {
             totalSpeed = playerSpeed;
+            playerTrail.SetActive(false);
             sprintTimer = 0.0f;
             sprinting = false;
         }
@@ -78,6 +82,7 @@ public class Player1MovementScript : MonoBehaviour
     void Start()
     {
         orientationPosition = transform.position;
+        playerTrail = GetComponentInChildren<TrailRenderer>().gameObject;
         lifeGO = GetComponent<LifeScript>();
     }
 

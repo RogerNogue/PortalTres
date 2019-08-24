@@ -9,6 +9,7 @@ public class Player2MovementScript : MonoBehaviour
     public float sprintSpeedBonus;
     public float sprintDuration;
 
+    private GameObject playerTrail;
     private LifeScript lifeGO;
     private Vector3 orientationPosition;
     private bool moving;
@@ -22,6 +23,7 @@ public class Player2MovementScript : MonoBehaviour
         {
             sprinting = true;
             lifeGO.currentHP -= 1;
+            playerTrail.SetActive(true);
         }
 
         if (sprinting && sprintTimer < sprintDuration)
@@ -33,6 +35,7 @@ public class Player2MovementScript : MonoBehaviour
         {
             totalSpeed = playerSpeed;
             sprintTimer = 0.0f;
+            playerTrail.SetActive(false);
             sprinting = false;
         }
 
@@ -79,6 +82,7 @@ public class Player2MovementScript : MonoBehaviour
     {
         orientationPosition = transform.position;
         lifeGO = GetComponent<LifeScript>();
+        playerTrail = GetComponentInChildren<TrailRenderer>().gameObject;
     }
 
     // Update is called once per frame
