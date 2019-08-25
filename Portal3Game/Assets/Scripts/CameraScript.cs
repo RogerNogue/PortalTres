@@ -7,8 +7,11 @@ public class CameraScript : MonoBehaviour
     
     public float cameraSpeed;
 
-    private Vector3 initialPosition;
+    public bool catSpeedBoost = false;
+    public float speedBoostAmount = 0.0f;
 
+    private Vector3 initialPosition;
+    private float totalSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,16 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0.0f, 0.0f);
+        
+        if(catSpeedBoost)
+        {
+            totalSpeed = cameraSpeed + speedBoostAmount;
+        }
+        else
+        {
+            totalSpeed = cameraSpeed;
+        }
+
+        transform.position += new Vector3(totalSpeed * Time.deltaTime, 0.0f, 0.0f);
     }
 }
