@@ -17,10 +17,16 @@ public class Player2MovementScript : MonoBehaviour
     private bool moving;
     private float sprintTimer = 0.0f;
     private bool sprinting = false;
+    private float slowAmount = 0.0f;
     private float totalSpeed;
     private bool invulnerable;//can be consulted via function
     private float hitTime;
     private float lastBlinkTime;
+
+    public void SetSlowAmount(float amount)
+    {
+        slowAmount = amount;
+    }
 
     void calculateMovementAndDirection()
     {
@@ -33,12 +39,12 @@ public class Player2MovementScript : MonoBehaviour
 
         if (sprinting && sprintTimer < sprintDuration)
         {
-            totalSpeed = playerSpeed + sprintSpeedBonus;
+            totalSpeed = playerSpeed + sprintSpeedBonus - slowAmount;
             sprintTimer += Time.deltaTime;
         }
         else
         {
-            totalSpeed = playerSpeed;
+            totalSpeed = playerSpeed - slowAmount;
             sprintTimer = 0.0f;
             playerTrail.SetActive(false);
             sprinting = false;
