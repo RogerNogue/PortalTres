@@ -11,6 +11,9 @@ public class Player2MovementScript : MonoBehaviour
     public float invulnerabilityDurationOnHit;
     public float blinkSwitchTimer;
 
+    public AudioClip[] audioClips;
+    public AudioClip deathClip;
+    private AudioSource audioSource;
     private GameObject playerTrail;
     private LifeScript lifeGO;
     private Vector3 orientationPosition;
@@ -102,6 +105,7 @@ public class Player2MovementScript : MonoBehaviour
     {
         orientationPosition = transform.position;
         lifeGO = GetComponent<LifeScript>();
+        audioSource = GetComponent<AudioSource>();
         playerTrail = GetComponentInChildren<TrailRenderer>().gameObject;
         transform.GetComponent<Rigidbody2D>().freezeRotation = true;
     }
@@ -109,14 +113,30 @@ public class Player2MovementScript : MonoBehaviour
     //Player got hit
     public void gotDamaged()
     {
-        //make invulnerable
-        invulnerable = true;
-        //store the hit time
-        hitTime = 0.0F;
-        //make disappear to start making it blink
-        transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
-        //store blink timer
-        lastBlinkTime = hitTime;
+        //float audioSelected = Random.Range(0.0f, 1.0f);
+        //if (audioSelected == 0)
+        //{
+        if(lifeGO.currentHP > 0)
+        {
+            int randClip = Random.Range(0, audioClips.Length);
+            audioSource.PlayOneShot(audioClips[randClip]);
+            //} else {
+            //    audioSource.Play("Au2");
+            //}
+            //make invulnerable
+            invulnerable = true;
+            //store the hit time
+            hitTime = 0.0F;
+            //make disappear to start making it blink
+            transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            //store blink timer
+            lastBlinkTime = hitTime;
+        }
+        else
+        {
+            audioSource.PlayOneShot(deathClip);
+        }
+        
     }
 
     // Update is called once per frame
