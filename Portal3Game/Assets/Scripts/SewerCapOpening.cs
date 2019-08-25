@@ -32,9 +32,9 @@ public class SewerCapOpening : MonoBehaviour
         {
             return;
         }
-        sendDamageSignal(col.transform.parent.gameObject);
         LifeScript lifeGO = col.transform.parent.gameObject.GetComponent<LifeScript>();
         lifeGO.currentHP -= 1;
+        sendDamageSignal(col.transform.parent.gameObject);
     }
 
     protected bool isInvulnerable(GameObject collided)
