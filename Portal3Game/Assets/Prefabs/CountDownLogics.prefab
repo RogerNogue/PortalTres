@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalCountDownTime: 4
-  TotalGOTime: 1
+  TotalGOTime: 3
   PositionAdjustmenWithGo: -3
   Player1: {fileID: 0}
   Player2: {fileID: 0}
