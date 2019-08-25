@@ -211,10 +211,18 @@ MonoBehaviour:
   sprintDuration: 5
   invulnerabilityDurationOnHit: 2.5
   blinkSwitchTimer: 0.15
+  upwardsDisplacement: 0
+  downwardsDisplacement: 0
+  rightwardsDisplacement: 0
+  leftwardsDisplacement: 0
   audioClips:
   - {fileID: 8300000, guid: 2bb4c427038f51c43aa599dd058dca8a, type: 3}
   - {fileID: 8300000, guid: de061e5a540199b4895b62cb9ea3c9b0, type: 3}
   deathClip: {fileID: 8300000, guid: bc15df365f3dd0d449997256f7dd5923, type: 3}
+  idleSprite: {fileID: -5531492338136735640, guid: 808a4c38bc75f264a82424501f7f880e,
+    type: 3}
+  spriteR: {fileID: 4636938751049258200}
+  animator: {fileID: 1689343318}
 --- !u!114 &1496386781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,7 +348,7 @@ GameObject:
   - component: {fileID: 4636938750929806425}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -372,7 +380,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.4860106, y: -0.12768751}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -383,7 +391,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3774034, y: 1.5776948}
   m_EdgeRadius: 0
 --- !u!1 &4636938751049258202
 GameObject:
@@ -395,6 +403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4636938751049258201}
   - component: {fileID: 4636938751049258200}
+  - component: {fileID: 1689343318}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -409,13 +418,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4636938751049258202}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 9, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7133249, w: -0.70083344}
+  m_LocalPosition: {x: -0.46099472, y: -0.10199553, z: 0}
+  m_LocalScale: {x: 5.033085, y: 4.79547, z: 1}
   m_Children: []
   m_Father: {fileID: 4636938750582568873}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 268.988}
 --- !u!212 &4636938751049258200
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -465,3 +474,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1689343318
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4636938751049258202}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 781fb61aa4193c646aad273587eb3845, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
