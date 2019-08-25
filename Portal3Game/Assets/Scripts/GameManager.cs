@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     private LifeScript player1Life;
     private LifeScript player2Life;
 
+    private AudioSource audioSource;
+
     private bool player1Win = false;
     private bool player2Win = false;
     private bool GameFinished = false;
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject mainCamera;
     public SpriteRenderer redLight;
+    public AudioSource sirensSound;
     private CameraScript camScript;
     private bool paused = false;
 
@@ -45,7 +48,6 @@ public class GameManager : MonoBehaviour
             player2Win = true;
         }   
     }
-
 
     void GameStop()
     {
@@ -62,9 +64,11 @@ public class GameManager : MonoBehaviour
             paused = !paused;
             cameraScrolling = !paused;
             redLight.enabled = paused;
+            sirensSound.enabled = paused;
 
             if (paused)
             {
+                audioSource.Pause();
                 if (player1Life.currentHP > 0)
                 {
                     player1Script.enabled = false;
@@ -78,6 +82,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                audioSource.UnPause();
                 if (player1Life.currentHP > 0)
                 {
                     player1Script.enabled = true;
@@ -124,6 +129,7 @@ public class GameManager : MonoBehaviour
            
         if(GameFinished)
         {
+            audioSource.Pause();
             gameFinishTimer += Time.deltaTime;
 
             if(gameFinishTimer > gameFinishedWaitTime)
@@ -147,6 +153,8 @@ public class GameManager : MonoBehaviour
         player2Color = player2Renderer.color;
         player1Life = player1.GetComponent<LifeScript>();
         player2Life = player2.GetComponent<LifeScript>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
     }
 
     // Update is called once per frame
