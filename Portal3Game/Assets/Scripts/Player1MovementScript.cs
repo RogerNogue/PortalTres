@@ -11,6 +11,7 @@ public class Player1MovementScript : MonoBehaviour
     public float blinkSwitchTimer;
 
     public AudioClip[] audioClips;
+    public AudioClip deathClip;
     private AudioSource audioSource;
     private GameObject playerTrail;
     private LifeScript lifeGO;
@@ -104,19 +105,27 @@ public class Player1MovementScript : MonoBehaviour
         //float audioSelected = Random.Range(0.0f, 1.0f);
         //if (audioSelected == 0)
         //{
-        int randClip = Random.Range(0, audioClips.Length);
-        audioSource.PlayOneShot(audioClips[randClip]);
-        //} else {
-        //    audioSource.Play("Au2");
-        //}
-        //make invulnerable
-        invulnerable = true;
-        //store the hit time
-        hitTime = 0.0F;
-        //make disappear to start making it blink
-        transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
-        //store blink timer
-        lastBlinkTime = hitTime;
+        if (lifeGO.currentHP > 0)
+        {
+            int randClip = Random.Range(0, audioClips.Length);
+            audioSource.PlayOneShot(audioClips[randClip]);
+            //} else {
+            //    audioSource.Play("Au2");
+            //}
+            //make invulnerable
+            invulnerable = true;
+            //store the hit time
+            hitTime = 0.0F;
+            //make disappear to start making it blink
+            transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            //store blink timer
+            lastBlinkTime = hitTime;
+        }
+        else
+        {
+            audioSource.PlayOneShot(deathClip);
+        }
+
     }
 
 

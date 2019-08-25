@@ -120,6 +120,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &63612710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8794739511561466811, guid: d4298c823d776904996e7f40e6f674ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1623729977}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &319596523 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1512288113478708000, guid: 328465f7ea897a740a23e59e035a7c5b,
@@ -555,6 +567,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af9fcd7ff3d54c646bb589019cda320a, type: 3}
+--- !u!1001 &1152554863
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1756365948429177956, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_Name
+      value: CountDownLogics
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177958, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6533966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177958, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.06316662
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177958, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0716925
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177958, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177958, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177958, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177958, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177958, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177958, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177958, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177958, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756365948429177959, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: countDownText
+      value: 
+      objectReference: {fileID: 63612710}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 356c40b75ddb6684fbe06d28099632d3, type: 3}
 --- !u!1 &1201185671 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1891287769, guid: d4298c823d776904996e7f40e6f674ff,
@@ -1377,6 +1463,11 @@ PrefabInstance:
       propertyPath: audioClips.Array.data[11]
       value: 
       objectReference: {fileID: 8300000, guid: 1fc0d300d7895e64cbf3402669312235, type: 3}
+    - target: {fileID: 1512288113478708003, guid: 328465f7ea897a740a23e59e035a7c5b,
+        type: 3}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 95abeeb12fe01c84b9faf74d35fcee35, type: 3}
     - target: {fileID: 1512288112501018387, guid: 328465f7ea897a740a23e59e035a7c5b,
         type: 3}
       propertyPath: m_TagString
