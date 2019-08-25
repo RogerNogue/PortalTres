@@ -10,7 +10,8 @@ public class Player1MovementScript : MonoBehaviour
     public float invulnerabilityDurationOnHit;
     public float blinkSwitchTimer;
 
-
+    public AudioClip[] audioClips;
+    private AudioSource audioSource;
     private GameObject playerTrail;
     private LifeScript lifeGO;
     private Vector3 orientationPosition;
@@ -100,6 +101,14 @@ public class Player1MovementScript : MonoBehaviour
     //Player got hit
     public void gotDamaged()
     {
+        //float audioSelected = Random.Range(0.0f, 1.0f);
+        //if (audioSelected == 0)
+        //{
+        int randClip = Random.Range(0, audioClips.Length);
+        audioSource.PlayOneShot(audioClips[randClip]);
+        //} else {
+        //    audioSource.Play("Au2");
+        //}
         //make invulnerable
         invulnerable = true;
         //store the hit time
@@ -110,10 +119,13 @@ public class Player1MovementScript : MonoBehaviour
         lastBlinkTime = hitTime;
     }
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         orientationPosition = transform.position;
+        audioSource = GetComponent<AudioSource>();
         playerTrail = GetComponentInChildren<TrailRenderer>().gameObject;
         lifeGO = GetComponent<LifeScript>();
         transform.GetComponent<Rigidbody2D>().freezeRotation = true;
