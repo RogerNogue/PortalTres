@@ -17,6 +17,11 @@ public class Player1MovementScript : MonoBehaviour
 
     public AudioClip[] audioClips;
     public AudioClip deathClip;
+
+    public Sprite idleSprite;
+    public SpriteRenderer spriteR;
+    public Animator animator;
+
     private AudioSource audioSource;
     private GameObject playerTrail;
     private LifeScript lifeGO;
@@ -84,13 +89,16 @@ public class Player1MovementScript : MonoBehaviour
         }
         if(moving)
         {
-  
+            animator.enabled = true;
             transform.rotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, -1.0f), new Vector3(-orientationPosition.y, orientationPosition.x, orientationPosition.z));
 
             orientationPosition.x = orientationPosition.y = orientationPosition.z = 0.0f;
             moving = false;
 
             //maybe later need for lerping: https://answers.unity.com/questions/36255/lookat-to-only-rotate-on-y-axis-how.html
+        } else {
+            animator.enabled = false;
+            spriteR.sprite = idleSprite;
         }
         Vector3 displacement = new Vector3((rightwardsDisplacement - leftwardsDisplacement) * Time.deltaTime, (upwardsDisplacement - downwardsDisplacement) * Time.deltaTime, 0.0F);
         transform.position += displacement;

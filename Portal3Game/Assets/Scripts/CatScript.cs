@@ -8,9 +8,17 @@ public class CatScript : EvilItemScript
     public CameraScript camScript;
     public float speedBoostAmount;
     public float boostDuration;
+    public AudioClip[] audioClips;
+
+    private AudioSource audioSource;
     private bool boostActivated;
     private bool scriptUsed = false;
     private float boostTimer;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,12 +38,14 @@ public class CatScript : EvilItemScript
     {
         if(!scriptUsed)
         {
-        boostActivated = true;
-        camScript.catSpeedBoost = true;
-        camScript.speedBoostAmount = speedBoostAmount;
-        scriptUsed = true;
+            int randomInt = Random.Range(0, audioClips.Length);
+            audioSource.PlayOneShot(audioClips[randomInt]);
+            boostActivated = true;
+            camScript.catSpeedBoost = true;
+            camScript.speedBoostAmount = speedBoostAmount;
+            scriptUsed = true;
             //Change Spritesomehow
-        transform.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            transform.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 }
