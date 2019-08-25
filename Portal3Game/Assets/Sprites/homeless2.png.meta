@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 5cd902d6aa6427b4ab1d7e33dfca57a0
+guid: 808a4c38bc75f264a82424501f7f880e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4546003935905974566
-    second: homeless1_0
+      213: -5348641276723651421
+    second: homeless2_0
   - first:
-      213: -4108802829166905379
-    second: homeless1_1
+      213: -779213575455436150
+    second: homeless2_1
   - first:
-      213: -7981315000924982467
-    second: homeless1_2
+      213: -5531492338136735640
+    second: homeless2_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -107,53 +107,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: homeless1_0
+      name: homeless2_0
       rect:
         serializedVersion: 2
         x: 23
         y: 85
-        width: 32
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3ce7396adb72cd42bb5beaa82f7cbe2
-      internalID: -4546003935905974566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: homeless1_1
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 85
-        width: 32
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72343dcfd1fe1ed4da323a00764c03f2
-      internalID: -4108802829166905379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: homeless1_2
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 39
         width: 32
         height: 43
       alignment: 0
@@ -163,8 +121,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 714fbd657f47648408e76fbbfd1df5dc
-      internalID: -7981315000924982467
+      spriteID: 7001b65e248719f4daf524f550d2fa6a
+      internalID: -5348641276723651421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: homeless2_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 85
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8faae67de223770428dc9f57442faa48
+      internalID: -779213575455436150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: homeless2_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 30
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91bdc6dd9949b3a41afe534bc0454692
+      internalID: -5531492338136735640
       vertices: []
       indices: 
       edges: []
