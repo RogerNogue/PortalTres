@@ -1675,6 +1675,16 @@ PrefabInstance:
       propertyPath: countDownText
       value: 
       objectReference: {fileID: 21419733}
+    - target: {fileID: 1756365948429177959, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: Player1
+      value: 
+      objectReference: {fileID: 273771233}
+    - target: {fileID: 1756365948429177959, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: Player2
+      value: 
+      objectReference: {fileID: 1912267122}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 356c40b75ddb6684fbe06d28099632d3, type: 3}
 --- !u!1001 &2462687809810895038

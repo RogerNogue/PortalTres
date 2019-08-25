@@ -29,10 +29,12 @@ public class GameManager : MonoBehaviour
     private bool GameFinished = false;
     private float gameFinishTimer = 0.0f;
 
+    public GameObject countDown;
     public GameObject mainCamera;
     public SpriteRenderer redLight;
     private CameraScript camScript;
     private bool paused = false;
+    private CountDownScript countScript;
 
     public void SetWin(int winner)
     {
@@ -147,13 +149,15 @@ public class GameManager : MonoBehaviour
         player2Color = player2Renderer.color;
         player1Life = player1.GetComponent<LifeScript>();
         player2Life = player2.GetComponent<LifeScript>();
+        countScript = countDown.GetComponent<CountDownScript>();
+        countScript.startCountDown();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (cameraScrolling)//input
+        if (countScript.start &&  cameraScrolling)//input
         {
             camScript.enabled = true;
         }
