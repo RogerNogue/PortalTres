@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
 
     public float gameFinishedWaitTime;
 
+    public Sprite handsUpSprite1;
+    public Sprite handsUpSprite2;
+    public Sprite idleSprite1;
+    public Sprite idleSprite2;
+
     private Player1MovementScript player1Script;
     private Player2MovementScript player2Script;
     private SpriteRenderer player1Renderer;
@@ -32,12 +37,12 @@ public class GameManager : MonoBehaviour
     private bool GameFinished = false;
     private float gameFinishTimer = 0.0f;
 
+    private bool paused = false;
     public GameObject countDown;
     public GameObject mainCamera;
     public SpriteRenderer redLight;
     public AudioSource sirensSound;
     private CameraScript camScript;
-    private bool paused = false;
     private CountDownScript countScript;
 
     public void SetWin(int winner)
@@ -62,6 +67,7 @@ public class GameManager : MonoBehaviour
         paused = false;
         pauseMenu.SetActive(false);
         audioSource.UnPause();
+        sirensSound.enabled = false;
         if (player1Life.currentHP > 0)
         {
             player1Script.enabled = true;
@@ -82,6 +88,11 @@ public class GameManager : MonoBehaviour
         GameFinished = true;
     }
 
+    public void ExitGame()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     void ManagePause()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -98,12 +109,12 @@ public class GameManager : MonoBehaviour
                 if (player1Life.currentHP > 0)
                 {
                     player1Script.enabled = false;
-                    player1Renderer.color = Color.black;
+                    player1Renderer.sprite = handsUpSprite1;
                 }
                 if (player2Life.currentHP > 0)
                 {
                     player2Script.enabled = false;
-                    player2Renderer.color = Color.black;
+                    player2Renderer.sprite = handsUpSprite2;
                 }
             }
             else
@@ -113,12 +124,12 @@ public class GameManager : MonoBehaviour
                 if (player1Life.currentHP > 0)
                 {
                     player1Script.enabled = true;
-                    player1Renderer.color = player1Color;
+                    player1Renderer.sprite = idleSprite1;
                 }
                 if (player2Life.currentHP > 0)
                 {
                     player2Script.enabled = true;
-                    player2Renderer.color = player2Color;
+                    player2Renderer.sprite = idleSprite2;
                 }
             }
         }
