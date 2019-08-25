@@ -10,6 +10,11 @@ public class Player1MovementScript : MonoBehaviour
     public float invulnerabilityDurationOnHit;
     public float blinkSwitchTimer;
 
+    public float upwardsDisplacement = 0;
+    public float downwardsDisplacement = 0;
+    public float rightwardsDisplacement = 0;
+    public float leftwardsDisplacement = 0;
+
     public AudioClip[] audioClips;
     public AudioClip deathClip;
     private AudioSource audioSource;
@@ -87,7 +92,8 @@ public class Player1MovementScript : MonoBehaviour
 
             //maybe later need for lerping: https://answers.unity.com/questions/36255/lookat-to-only-rotate-on-y-axis-how.html
         }
-
+        Vector3 displacement = new Vector3((rightwardsDisplacement - leftwardsDisplacement) * Time.deltaTime, (upwardsDisplacement - downwardsDisplacement) * Time.deltaTime, 0.0F);
+        transform.position += displacement;
     }
     public bool isInvulnerable()
     {
