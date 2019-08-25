@@ -5,21 +5,23 @@ using UnityEngine;
 public class SewerCapOpening : MonoBehaviour
 {
     private bool used = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool activated = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (!used && Input.GetMouseButtonDown(0))
+        if (!used && activated)
         {
-            used = true;
             transform.gameObject.GetComponent<CircleCollider2D>().enabled = true;
             transform.gameObject.GetComponent<Animator>().enabled = true;
+            used = true;
+            activated = false;
         }
+    }
+
+    public void ActivateEvilItem()
+    {
+        activated = true;
     }
 
     void OnTriggerEnter2D(Collider2D col)
