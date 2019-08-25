@@ -31,11 +31,13 @@ public class GameManager : MonoBehaviour
     private bool GameFinished = false;
     private float gameFinishTimer = 0.0f;
 
+    public GameObject countDown;
     public GameObject mainCamera;
     public SpriteRenderer redLight;
     public AudioSource sirensSound;
     private CameraScript camScript;
     private bool paused = false;
+    private CountDownScript countScript;
 
     public void SetWin(int winner)
     {
@@ -153,6 +155,8 @@ public class GameManager : MonoBehaviour
         player2Color = player2Renderer.color;
         player1Life = player1.GetComponent<LifeScript>();
         player2Life = player2.GetComponent<LifeScript>();
+        countScript = countDown.GetComponent<CountDownScript>();
+        countScript.startCountDown();
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
     }
@@ -161,7 +165,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (cameraScrolling)//input
+        if (countScript.start &&  cameraScrolling)//input
         {
             camScript.enabled = true;
         }

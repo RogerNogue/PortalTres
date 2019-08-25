@@ -9,7 +9,10 @@ public class CountDownScript : MonoBehaviour
     public float TotalGOTime;
     public float PositionAdjustmenWithGo;
 
+    public GameObject Player1;
+    public GameObject Player2;
     public Text countDownText;
+    public bool start = false;
 
     float currentTime;
     bool countingDown;
@@ -17,15 +20,32 @@ public class CountDownScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        start = false;
+    }
+
+    public void startCountDown()
+    {
+        Player1.SetActive(false);
+        Player2.SetActive(false);
         countingDown = true;
         currentTime = TotalCountDownTime;
         countDownText.enabled = true;
     }
 
+
     // Update is called once per frame
     void Update()
     {
-        if(countingDown)
+        //Debug.Log("Current timer time = " + currentTime.ToString());
+        if (countingDown && currentTime <= 1)
+        {
+            countingDown = false;
+            currentTime = 0.0F;
+            countDownText.text = "GO";
+            countDownText.transform.position = new Vector3(countDownText.transform.position.x + PositionAdjustmenWithGo, countDownText.transform.position.y, countDownText.transform.position.z); ;
+        }
+
+        if (countingDown)
         {
             //countDown
             currentTime -= 1 * Time.deltaTime;
@@ -40,15 +60,10 @@ public class CountDownScript : MonoBehaviour
             {
                 //when done displaying "GO" text, dissapear
                 countDownText.enabled = false;
+                Player1.SetActive(true);
+                Player2.SetActive(true);
+                start = true;
             }
-        }
-        
-        if (countingDown && currentTime <= 1)
-        {
-            countingDown = false;
-            currentTime = 0.0F;
-            countDownText.text = "GO";
-            countDownText.transform.position = new Vector3(countDownText.transform.position.x + PositionAdjustmenWithGo, countDownText.transform.position.y, countDownText.transform.position.z); ;
         }
     }
 }
