@@ -9,6 +9,8 @@ public class ShineAndHighlight : MonoBehaviour
     public Color shineColor;
     public Color highLightedColor;
 
+    public BoxCollider2D colliderInside;
+
     private Color originalColor;
     private SpriteRenderer spriteR;
 
@@ -32,8 +34,14 @@ public class ShineAndHighlight : MonoBehaviour
     {
         if(!used)
         {
-            GetComponentInChildren<SewerCapOpening>().ActivateEvilItem();
-            GetComponent<CircleCollider2D>().enabled = false;
+            if(gameObject.name == "Sewer") {
+                GetComponentInChildren<SewerCapOpening>().ActivateEvilItem();
+                GetComponent<CircleCollider2D>().enabled = false;
+            } else if (name == "BarrelRolling") {
+                GetComponentInChildren<rollingBarrelScript>().clicked();
+                //GetComponent<BoxCollider2D>().enabled = false;
+                //colliderInside.enabled = true;
+            }
             spriteR.color = originalColor;
             used = true;
         }

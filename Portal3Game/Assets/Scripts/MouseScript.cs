@@ -17,7 +17,7 @@ public class MouseScript : MonoBehaviour
             RaycastHit2D hit = Physics2D.GetRayIntersection(ray2D,Mathf.Infinity);
             if (hit.collider != null)
             {
-                Debug.Log("Clicked " + hit.collider.gameObject.transform.parent.gameObject.name);
+                //Debug.Log("Clicked " + hit.collider.gameObject.transform.parent.gameObject.name);
                 //SpriteRenderer spriteGO = hit.collider.gameObject.transform.parent.GetComponentInChildren<SpriteRenderer>();
                 //spriteGO.color = Color.red;
             }

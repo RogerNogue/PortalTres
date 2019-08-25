@@ -10,10 +10,11 @@ public class rollingBarrelScript : EvilItemScript
     public float downwardsSpeed;
 
     private bool rolling = false;
+    private Animator barrelAnimator;
     // Start is called before the first frame update
     void Start()
     {
-        transform.GetComponent<BoxCollider2D>().enabled = false;
+        barrelAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,23 +28,38 @@ public class rollingBarrelScript : EvilItemScript
 
     public void clicked()
     {
-        Debug.Log("BARREL GOTTA ROLL");
-        transform.GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<AudioSource>().enabled = true;
+        transform.GetComponentInChildren<BoxCollider2D>().enabled = true;
+        barrelAnimator.enabled = true;
         rolling = true;
         //temporal color setting
         transform.GetComponent<SpriteRenderer>().color = Color.red;
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log(col.transform.parent.gameObject.name);
+
         //if player is invulnerable, we ignore the collision
-        if (isInvulnerable(col.transform.parent.gameObject))
+        if (rolling)
         {
-            return;
+            if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2")
+            {
+                if (isInvulnerable(collision.transform.gameObject))
+                {
+                    return;
+                }
+            
+                LifeScript lifeGO = collision.transform.gameObject.GetComponent<LifeScript>();
+                lifeGO.currentHP -= 1;
+                sendDamageSignal(collision.transform.gameObject);
+            }
+            GetComponent<AudioSource>().enabled = false;
+            rolling = false;
+            barrelAnimator.enabled = false;
+            gameObject.GetComponent<ShineAndHighlight>().enabled = false;
+            enabled = false;
         }
-        sendDamageSignal(col.transform.parent.gameObject);
-        LifeScript lifeGO = col.transform.parent.gameObject.GetComponent<LifeScript>();
-        lifeGO.currentHP -= 1;
+
     }
+    
 }
