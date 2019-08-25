@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject P1win;
     public GameObject P2win;
     public GameObject FateWin;
+    public GameObject pauseMenu;
 
     public float gameFinishedWaitTime;
 
@@ -51,6 +52,28 @@ public class GameManager : MonoBehaviour
         }   
     }
 
+    public void SetGameFinished()
+    {
+        GameFinished = true;
+    }
+
+    public void ResumeGame()
+    {
+        paused = false;
+        pauseMenu.SetActive(false);
+        audioSource.UnPause();
+        if (player1Life.currentHP > 0)
+        {
+            player1Script.enabled = true;
+            player1Renderer.color = player1Color;
+        }
+        if (player2Life.currentHP > 0)
+        {
+            player2Script.enabled = true;
+            player2Renderer.color = player2Color;
+        }
+    }
+
     void GameStop()
     {
         cameraScrolling = false;
@@ -70,6 +93,7 @@ public class GameManager : MonoBehaviour
 
             if (paused)
             {
+                pauseMenu.SetActive(true);
                 audioSource.Pause();
                 if (player1Life.currentHP > 0)
                 {
@@ -84,6 +108,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                pauseMenu.SetActive(false);
                 audioSource.UnPause();
                 if (player1Life.currentHP > 0)
                 {
