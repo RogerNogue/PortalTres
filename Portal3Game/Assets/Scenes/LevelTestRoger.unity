@@ -457,8 +457,10 @@ MonoBehaviour:
   P2win: {fileID: 0}
   FateWin: {fileID: 0}
   gameFinishedWaitTime: 0
+  countDown: {fileID: 1958715556}
   mainCamera: {fileID: 1328084664401990125}
   redLight: {fileID: 1859233460}
+  sirensSound: {fileID: 0}
 --- !u!4 &592204425
 Transform:
   m_ObjectHideFlags: 0
@@ -935,6 +937,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8794739511561466811, guid: d4298c823d776904996e7f40e6f674ff,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3980560476462997494, guid: d4298c823d776904996e7f40e6f674ff,
         type: 3}
       propertyPath: m_Name
@@ -1379,6 +1386,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2462687809810895038}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1958715556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1756365948429177956, guid: 356c40b75ddb6684fbe06d28099632d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1756365948786530616}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1328084664401990125 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3062985218032491719, guid: f074de742b8a2684ca264a5c48889eed,
@@ -1672,11 +1685,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1756365948429177959, guid: 356c40b75ddb6684fbe06d28099632d3,
         type: 3}
-      propertyPath: countDownText
-      value: 
-      objectReference: {fileID: 21419733}
-    - target: {fileID: 1756365948429177959, guid: 356c40b75ddb6684fbe06d28099632d3,
-        type: 3}
       propertyPath: Player1
       value: 
       objectReference: {fileID: 273771233}
@@ -1685,6 +1693,16 @@ PrefabInstance:
       propertyPath: Player2
       value: 
       objectReference: {fileID: 1912267122}
+    - target: {fileID: 1756365948429177959, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: countDownText
+      value: 
+      objectReference: {fileID: 21419733}
+    - target: {fileID: 1756365948429177959, guid: 356c40b75ddb6684fbe06d28099632d3,
+        type: 3}
+      propertyPath: TotalGOTime
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 356c40b75ddb6684fbe06d28099632d3, type: 3}
 --- !u!1001 &2462687809810895038
@@ -1702,12 +1720,12 @@ PrefabInstance:
     - target: {fileID: 4636938750582568873, guid: 032ceaa8dd36f34429f0f86e0842b31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.52
+      value: -6.3
       objectReference: {fileID: 0}
     - target: {fileID: 4636938750582568873, guid: 032ceaa8dd36f34429f0f86e0842b31e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.95
       objectReference: {fileID: 0}
     - target: {fileID: 4636938750582568873, guid: 032ceaa8dd36f34429f0f86e0842b31e,
         type: 3}
@@ -2268,12 +2286,12 @@ PrefabInstance:
     - target: {fileID: 1512288113478708002, guid: 328465f7ea897a740a23e59e035a7c5b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6.33
       objectReference: {fileID: 0}
     - target: {fileID: 1512288113478708002, guid: 328465f7ea897a740a23e59e035a7c5b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.72
       objectReference: {fileID: 0}
     - target: {fileID: 1512288113478708002, guid: 328465f7ea897a740a23e59e035a7c5b,
         type: 3}
