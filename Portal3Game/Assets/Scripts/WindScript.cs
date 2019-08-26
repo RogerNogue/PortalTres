@@ -17,6 +17,7 @@ public class WindScript : MonoBehaviour
     float currentDisplacementDownwardsValue;
     float currentDisplacementRightwardsValue;
     float currentDisplacementLeftwardsValue;
+    ParticleSystem ourParticles;
 
     Player1MovementScript pl1;
     bool gotPlayer1 = false;
@@ -29,6 +30,7 @@ public class WindScript : MonoBehaviour
         currentDisplacementDownwardsValue = displacementDownwardsValue;
         currentDisplacementRightwardsValue = displacementRightwardsValue;
         currentDisplacementLeftwardsValue = displacementLeftwardsValue;
+        ourParticles = transform.GetComponent<ParticleSystem>();
     }
 
     void addWindForceToAPlayer1(Player1MovementScript p)
@@ -66,13 +68,16 @@ public class WindScript : MonoBehaviour
         activated = !activated;
         if(activated)
         {
+            
             turnedOn();
             transform.GetComponent<SpriteRenderer>().color = Color.red;
+            ourParticles.Play();
         }
         else
         {
             turnedOff();
             transform.GetComponent<SpriteRenderer>().color = Color.blue;
+            ourParticles.Stop();
         }
     }
 
