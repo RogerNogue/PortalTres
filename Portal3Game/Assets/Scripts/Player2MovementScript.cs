@@ -46,7 +46,6 @@ public class Player2MovementScript : MonoBehaviour
         if (Input.GetKeyDown("right shift") && !sprinting)
         {
             sprinting = true;
-            lifeGO.currentHP -= 1;
             playerTrail.SetActive(true);
         }
 
@@ -55,12 +54,18 @@ public class Player2MovementScript : MonoBehaviour
             totalSpeed = playerSpeed + sprintSpeedBonus - slowAmount;
             sprintTimer += Time.deltaTime;
         }
-        else
+        else if (sprintTimer > sprintDuration)
         {
             totalSpeed = playerSpeed - slowAmount;
             sprintTimer = 0.0f;
             playerTrail.SetActive(false);
             sprinting = false;
+            lifeGO.currentHP -= 1;
+        }
+        else
+        {
+            totalSpeed = playerSpeed - slowAmount;
+            playerTrail.SetActive(false);
         }
 
         //going through input detection modifying the position of the player

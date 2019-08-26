@@ -46,7 +46,6 @@ public class Player1MovementScript : MonoBehaviour
         {
             sprinting = true;
             playerTrail.SetActive(true);
-            lifeGO.currentHP -= 1;
         }
          
         if(sprinting && sprintTimer < sprintDuration)
@@ -54,12 +53,18 @@ public class Player1MovementScript : MonoBehaviour
             totalSpeed = playerSpeed + sprintSpeedBonus - slowAmount;
             sprintTimer += Time.deltaTime;
         }
-        else
+        else if(sprintTimer > sprintDuration)
         {
             totalSpeed = playerSpeed - slowAmount;
             playerTrail.SetActive(false);
             sprintTimer = 0.0f;
             sprinting = false;
+            lifeGO.currentHP -= 1;
+        }
+        else
+        {
+            totalSpeed = playerSpeed - slowAmount;
+            playerTrail.SetActive(false);
         }
 
         //going through input detection modifying the position of the player

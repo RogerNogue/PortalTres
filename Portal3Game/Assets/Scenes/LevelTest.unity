@@ -1243,36 +1243,13 @@ PrefabInstance:
       propertyPath: thirdHeart
       value: 
       objectReference: {fileID: 3980560475670484329}
-    - target: {fileID: 4636938751049258200, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -5531492338136735640, guid: 808a4c38bc75f264a82424501f7f880e,
-        type: 3}
-    - target: {fileID: 4636938751049258200, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: m_Color.r
+    - target: {fileID: 1364683869, guid: 032ceaa8dd36f34429f0f86e0842b31e, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4636938751049258200, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: m_Color.g
+    - target: {fileID: 1364683871, guid: 032ceaa8dd36f34429f0f86e0842b31e, type: 3}
+      propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636938751049258200, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636938751049258200, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636938751049258200, guid: 032ceaa8dd36f34429f0f86e0842b31e,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 032ceaa8dd36f34429f0f86e0842b31e, type: 3}
@@ -2343,10 +2320,15 @@ PrefabInstance:
       propertyPath: thirdHeart
       value: 
       objectReference: {fileID: 3980560476422994571}
-    - target: {fileID: 1512288113723535318, guid: 328465f7ea897a740a23e59e035a7c5b,
+    - target: {fileID: 1832791419131841910, guid: 328465f7ea897a740a23e59e035a7c5b,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116830841229563641, guid: 328465f7ea897a740a23e59e035a7c5b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 328465f7ea897a740a23e59e035a7c5b, type: 3}
