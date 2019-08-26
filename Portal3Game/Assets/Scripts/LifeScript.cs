@@ -45,7 +45,6 @@ public class LifeScript : MonoBehaviour
                     secondHeart.SetActive(false);
                     thirdHeart.SetActive(false);
 
-                    playerSprite.color = Color.green;
                     playerSprite.sortingOrder = -1; //So it paints below the other guy alive
                     playerCollider.enabled = false;
                     break;
