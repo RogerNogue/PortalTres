@@ -35,6 +35,15 @@ public class Player1MovementScript : MonoBehaviour
     private float hitTime;
     private float lastBlinkTime;
 
+    //instakill function for when gets out of the map
+    public void instaKill()
+    {
+        lifeGO.firstHeart.SetActive(false);
+        lifeGO.secondHeart.SetActive(false);
+        lifeGO.thirdHeart.SetActive(false);
+        lifeGO.currentHP = 0;
+    }
+
     public void SetSlowAmount(float amount)
     {
         slowAmount = amount;
