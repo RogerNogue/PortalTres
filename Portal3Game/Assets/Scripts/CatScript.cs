@@ -44,8 +44,7 @@ public class CatScript : EvilItemScript
             camScript.catSpeedBoost = true;
             camScript.speedBoostAmount = speedBoostAmount;
             scriptUsed = true;
-            //Change Spritesomehow
-            transform.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            transform.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
         }
     }
 }

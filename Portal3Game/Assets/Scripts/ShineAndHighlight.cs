@@ -46,19 +46,29 @@ public class ShineAndHighlight : MonoBehaviour
     {
         if(!used)
         {
-            if(gameObject.name == "Sewer") {
+            if (gameObject.name == "Sewer")
+            {
                 GetComponentInChildren<SewerCapOpening>().ActivateEvilItem();
                 GetComponent<CircleCollider2D>().enabled = false;
                 spriteR.color = originalColor;
-            } else if (name == "BarrelRolling") {
+                used = true;
+            }
+            else if (name == "BarrelRolling")
+            {
                 GetComponentInChildren<rollingBarrelScript>().clicked();
                 spriteR.color = originalColor;
-            } else if (name == "ExplodingBarrel") {
-                GetComponentInChildren<explodingBarrel>().clicked();
+                used = true;
             }
-
+            else if (name == "ExplodingBarrel")
+            {
+                GetComponentInChildren<explodingBarrel>().clicked();
+                used = true;
+            }
+            else if (name == "WindEmitter")
+            {
+                GetComponentInChildren<WindScript>().toggled();
+            }
             
-            used = true;
         }
     }
 

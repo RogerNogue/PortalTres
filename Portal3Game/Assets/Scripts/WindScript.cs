@@ -13,6 +13,8 @@ public class WindScript : MonoBehaviour
 
     public bool activated = true;
 
+    public Animator fanAnimator;
+
     float currentDisplacementUpwardsValue;
     float currentDisplacementDownwardsValue;
     float currentDisplacementRightwardsValue;
@@ -68,15 +70,16 @@ public class WindScript : MonoBehaviour
         activated = !activated;
         if(activated)
         {
-            
             turnedOn();
-            transform.GetComponent<SpriteRenderer>().color = Color.red;
+            GetComponent<BoxCollider2D>().enabled = true;
+            fanAnimator.enabled = true;
             ourParticles.Play();
         }
         else
         {
             turnedOff();
-            transform.GetComponent<SpriteRenderer>().color = Color.blue;
+            GetComponent<BoxCollider2D>().enabled = false;
+            fanAnimator.enabled = false;
             ourParticles.Stop();
         }
     }
