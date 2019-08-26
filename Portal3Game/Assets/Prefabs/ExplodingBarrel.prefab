@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4511346348359565479}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.12509947, y: -0.04853781, z: -0.032}
   m_LocalScale: {x: 0.016470982, y: 0.034168944, z: 0.015690727}
   m_Children:
@@ -209,7 +209,7 @@ MonoBehaviour:
   used: 0
   mouseHovering: 0
   shineColor: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
-  highLightedColor: {r: 0, g: 0.9433962, b: 0.067054324, a: 1}
+  highLightedColor: {r: 0, g: 1, b: 0.09689784, a: 1}
   colliderInside: {fileID: 0}
   materialInside: {fileID: 2100000, guid: 96ce596b00a3d784b97b96e5fb702380, type: 2}
 --- !u!1 &4511346348733989582
