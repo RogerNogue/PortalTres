@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 96ce596b00a3d784b97b96e5fb702380, type: 2}
+  - {fileID: 2100000, guid: 3f7394cda426cf548ad964f20cd8913c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
   shineColor: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   highLightedColor: {r: 0, g: 1, b: 0.09689784, a: 1}
   colliderInside: {fileID: 0}
-  materialInside: {fileID: 2100000, guid: 96ce596b00a3d784b97b96e5fb702380, type: 2}
+  materialInside: {fileID: 2100000, guid: 3f7394cda426cf548ad964f20cd8913c, type: 2}
 --- !u!1 &4511346348733989582
 GameObject:
   m_ObjectHideFlags: 0

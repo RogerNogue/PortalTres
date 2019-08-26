@@ -64,7 +64,7 @@ public class PlayersStatusManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        SceneManager.LoadScene("LevelTest");
+        SceneManager.LoadScene("LevelAA");
     }
 
 }
