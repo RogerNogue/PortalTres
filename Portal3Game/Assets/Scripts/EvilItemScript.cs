@@ -17,32 +17,19 @@ public class EvilItemScript : MonoBehaviour
         {
             return collided.GetComponent<Player2MovementScript>().isInvulnerable();
         }
+
         return false;
     }
+
     protected void sendDamageSignal(GameObject collided)
     {
         if (collided.tag == "Player1")
         {
             collided.GetComponent<Player1MovementScript>().gotDamaged();
         }
-        //if player 2 we use the Player2MovementScript
         else if (collided.tag == "Player2")
         {
             collided.GetComponent<Player2MovementScript>().gotDamaged();
         }
     }
-
-    //since its parent, no ontriggerEnter2D function
-   /* virtual void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log(col.transform.parent.gameObject.name);
-        //if player is invulnerable, we ignore the collision
-        if(isInvulnerable(col.transform.parent.gameObject))
-        {
-            return;
-        }
-        sendDamageSignal(col.transform.parent.gameObject);
-        LifeScript lifeGO = col.transform.parent.gameObject.GetComponent<LifeScript>();
-        lifeGO.currentHP -= 1;
-    }*/
 }

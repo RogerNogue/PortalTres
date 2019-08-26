@@ -10,15 +10,22 @@ public class ShineAndHighlight : MonoBehaviour
     public Color highLightedColor;
 
     public BoxCollider2D colliderInside;
-
+    public Material materialInside;
     private Color originalColor;
     private SpriteRenderer spriteR;
+
 
     // Start is called before the first frame update
     void Start()
     {
         spriteR = GetComponentInChildren<SpriteRenderer>();
-        originalColor = spriteR.color;
+        if (name != "ExplodingBarrel")
+        {
+            originalColor = spriteR.color;
+        } else
+        {
+            originalColor = materialInside.color;
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +33,12 @@ public class ShineAndHighlight : MonoBehaviour
     {
         if(!used && !mouseHovering)
         {
-            spriteR.color = Color.Lerp(Color.white, shineColor, Mathf.PingPong(Time.time, 1.0f));
+            if (name != "ExplodingBarrel") {
+                spriteR.color = Color.Lerp(Color.white, shineColor, Mathf.PingPong(Time.time, 1.0f));
+            } else {
+                materialInside.color = Color.Lerp(Color.white, shineColor, Mathf.PingPong(Time.time, 1.0f));
+            }
+            
         }
     }
 
@@ -37,12 +49,15 @@ public class ShineAndHighlight : MonoBehaviour
             if(gameObject.name == "Sewer") {
                 GetComponentInChildren<SewerCapOpening>().ActivateEvilItem();
                 GetComponent<CircleCollider2D>().enabled = false;
+                spriteR.color = originalColor;
             } else if (name == "BarrelRolling") {
                 GetComponentInChildren<rollingBarrelScript>().clicked();
-                //GetComponent<BoxCollider2D>().enabled = false;
-                //colliderInside.enabled = true;
+                spriteR.color = originalColor;
+            } else if (name == "ExplodingBarrel") {
+                GetComponentInChildren<explodingBarrel>().clicked();
             }
-            spriteR.color = originalColor;
+
+            
             used = true;
         }
     }
@@ -52,7 +67,11 @@ public class ShineAndHighlight : MonoBehaviour
         if(!used)
         {
             mouseHovering = true;
-            spriteR.color = highLightedColor;
+            if (name != "ExplodingBarrel") {
+                spriteR.color = highLightedColor;
+            } else {
+                materialInside.color = highLightedColor;
+            }
         }
     }
 
@@ -60,8 +79,13 @@ public class ShineAndHighlight : MonoBehaviour
     {
         if (!used)
         {
-            mouseHovering = false;
-            spriteR.color = originalColor;
+            if (name != "ExplodingBarrel")
+            {
+                mouseHovering = false;
+                spriteR.color = originalColor;
+            } else {
+                materialInside.color = Color.white;
+            }
         }
     }
 
