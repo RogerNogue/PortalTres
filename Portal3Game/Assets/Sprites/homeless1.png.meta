@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: 3015524519746962084
     second: homeless1_3
+  - first:
+      213: -2928138107545623711
+    second: homeless1_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -181,7 +184,7 @@ TextureImporter:
         width: 38
         height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,6 +192,27 @@ TextureImporter:
       bones: []
       spriteID: d642d2a2d3f81954f81074834ab608b3
       internalID: 3015524519746962084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: homeless1_4
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 0
+        width: 33
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23c3c47014c0ee40a692a52987183dc
+      internalID: -2928138107545623711
       vertices: []
       indices: 
       edges: []
