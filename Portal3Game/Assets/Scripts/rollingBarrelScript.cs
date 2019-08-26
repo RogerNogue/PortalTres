@@ -15,6 +15,7 @@ public class rollingBarrelScript : EvilItemScript
     void Start()
     {
         barrelAnimator = GetComponent<Animator>();
+        GetComponent<AudioSource>().enabled = false;
     }
 
     // Update is called once per frame
