@@ -14,7 +14,6 @@ public class PlayersStatusManager : MonoBehaviour
     public Image player2HighLight;
     public Button loadNewSceneButton;
     public Text amountHomelessAwoken;
-
     public bool homelessReady = false;
 
     // Update is called once per frame
@@ -64,7 +63,15 @@ public class PlayersStatusManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        SceneManager.LoadScene("LevelTest");
+        int randomInt = UnityEngine.Random.Range(0, 1);
+        if(randomInt == 0)
+        {
+            SceneManager.LoadScene("LevelAA");
+        }
+        else
+        {
+            SceneManager.LoadScene("LevelR");
+        }
     }
 
 }
