@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     private Player1MovementScript player1Script;
     private Player2MovementScript player2Script;
+    private Animator player1Anim;
+    private Animator player2Anim;
     private SpriteRenderer player1Renderer;
     private SpriteRenderer player2Renderer;
     private Color player1Color;
@@ -71,12 +73,14 @@ public class GameManager : MonoBehaviour
         if (player1Life.currentHP > 0)
         {
             player1Script.enabled = true;
-            player1Renderer.color = player1Color;
+            player1Renderer.sprite = idleSprite1;
+            player1Anim.enabled = true;
         }
         if (player2Life.currentHP > 0)
         {
             player2Script.enabled = true;
-            player2Renderer.color = player2Color;
+            player2Renderer.sprite = idleSprite2;
+            player2Anim.enabled = true;
         }
     }
 
@@ -110,11 +114,13 @@ public class GameManager : MonoBehaviour
                 {
                     player1Script.enabled = false;
                     player1Renderer.sprite = handsUpSprite1;
+                    player1Anim.enabled = false;
                 }
                 if (player2Life.currentHP > 0)
                 {
                     player2Script.enabled = false;
                     player2Renderer.sprite = handsUpSprite2;
+                    player2Anim.enabled = false;
                 }
             }
             else
@@ -125,11 +131,13 @@ public class GameManager : MonoBehaviour
                 {
                     player1Script.enabled = true;
                     player1Renderer.sprite = idleSprite1;
+                    player1Anim.enabled = true;
                 }
                 if (player2Life.currentHP > 0)
                 {
                     player2Script.enabled = true;
                     player2Renderer.sprite = idleSprite2;
+                    player2Anim.enabled = true;
                 }
             }
         }
@@ -187,6 +195,8 @@ public class GameManager : MonoBehaviour
         player2Script = player2.GetComponent<Player2MovementScript>();
         player1Renderer = player1.GetComponentInChildren<SpriteRenderer>();
         player2Renderer = player2.GetComponentInChildren<SpriteRenderer>();
+        player1Anim = player1.GetComponentInChildren<Animator>();
+        player2Anim = player2.GetComponentInChildren<Animator>();
         player1Color = player1Renderer.color;
         player2Color = player2Renderer.color;
         player1Life = player1.GetComponent<LifeScript>();
