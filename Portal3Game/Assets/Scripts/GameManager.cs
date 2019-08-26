@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         paused = false;
+        cameraScrolling = true;
         pauseMenu.SetActive(false);
         audioSource.UnPause();
         sirensSound.enabled = false;

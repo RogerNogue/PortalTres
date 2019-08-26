@@ -63,7 +63,7 @@ public class PlayersStatusManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        int randomInt = UnityEngine.Random.Range(0, 1);
+        int randomInt = UnityEngine.Random.Range(0, 2);
         if(randomInt == 0)
         {
             SceneManager.LoadScene("LevelAA");

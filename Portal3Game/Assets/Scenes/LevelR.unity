@@ -5157,6 +5157,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 290003051}
+    - target: {fileID: 3128055094715950806, guid: acb2edf052d2049468af8b5c3c67d9f0,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2041501862799544192, guid: acb2edf052d2049468af8b5c3c67d9f0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6804,11 +6809,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 3062985218032491723, guid: f074de742b8a2684ca264a5c48889eed,
-        type: 3}
-      propertyPath: cameraSpeed
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3062985218032491722, guid: f074de742b8a2684ca264a5c48889eed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6863,6 +6863,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062985218032491723, guid: f074de742b8a2684ca264a5c48889eed,
+        type: 3}
+      propertyPath: cameraSpeed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f074de742b8a2684ca264a5c48889eed, type: 3}
