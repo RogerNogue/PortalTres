@@ -4880,22 +4880,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 586462260}
-    - target: {fileID: 2041501863884028798, guid: acb2edf052d2049468af8b5c3c67d9f0,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041501863884028798, guid: acb2edf052d2049468af8b5c3c67d9f0,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041501863884028793, guid: acb2edf052d2049468af8b5c3c67d9f0,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c9bf778c9b67bf9478bac914898f8601,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acb2edf052d2049468af8b5c3c67d9f0, type: 3}
 --- !u!1 &1421209378
