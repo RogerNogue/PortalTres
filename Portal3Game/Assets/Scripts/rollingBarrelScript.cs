@@ -14,7 +14,7 @@ public class rollingBarrelScript : EvilItemScript
     // Start is called before the first frame update
     void Start()
     {
-        barrelAnimator = GetComponent<Animator>();
+        barrelAnimator = GetComponentInChildren<Animator>();
         GetComponent<AudioSource>().enabled = false;
     }
 
@@ -30,7 +30,7 @@ public class rollingBarrelScript : EvilItemScript
     public void clicked()
     {
         GetComponent<AudioSource>().enabled = true;
-        transform.GetComponentInChildren<BoxCollider2D>().enabled = true;
+        //transform.GetComponentInChildren<BoxCollider2D>().enabled = true;
         barrelAnimator.enabled = true;
         rolling = true;
         //temporal color setting

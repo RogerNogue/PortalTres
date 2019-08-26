@@ -26,7 +26,7 @@ public class jamScript : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        spriteGO = GetComponent<SpriteRenderer>();
+        spriteGO = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
